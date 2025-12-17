@@ -3,6 +3,9 @@
 // ----------------------------------------------------------------------
 const PATCH_NOTES = `
 ---------
+25년 12월 17일 오후 8시 40분
+게임 난이도 조정을 위해 제한 시간을 60초에서 30초로 단축했습니다.
+---------
 25년 12월 17일 오후 8시
 게임 최적화 작업을 진행했습니다.
 (불필요한 코드 및 라이브러리 제거)
@@ -191,7 +194,7 @@ function initGame() {
         console.log("Game Initializing...");
         gameState.currentQuestionNumber = 0;
         gameState.score = 0;
-        gameState.timer = 60;
+        gameState.timer = 30; // 30초로 단축
         gameState.totalSolveTime = 0;
         gameState.solvedCount = 0;
         gameState.usedQuestionIds.clear();
@@ -425,7 +428,7 @@ function handleCorrectAnswer() {
     // 모래 효과 재생 (화면 붕괴 시뮬레이션)
     createScreenCrumbleEffect(() => {
         // 애니메이션 완료 후 다음 단계
-        gameState.timer = 60;
+        gameState.timer = 30; // 30초로 리셋
         updateTimerDisplay();
         nextQuestion();
 
