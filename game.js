@@ -5,6 +5,7 @@ const PATCH_NOTES = `
 ---------
 25년 12월 17일 오후 7시
 게임오버시 풀이보기 기능을 추가했습니다.
+효과음을 추가했습니다.
 ---------
 25년 12월 17일
 게임제작
@@ -125,6 +126,13 @@ function closeSolution() {
 function showGamePlay() {
     hideAllScreens();
     if (ui.gamePlayScreen) ui.gamePlayScreen.classList.remove('hidden');
+
+    // 오디오 컨텍스트 시작 (유저 제스처 필요)
+    if (window.SoundManager) {
+        // window.SoundManager.playBGM(); // BGM 제거
+        window.SoundManager.playSFX('click');
+    }
+
     initGame();
 }
 
@@ -159,6 +167,14 @@ window.onload = function () {
     if (ui.closeSolutionBtn) ui.closeSolutionBtn.onclick = closeSolution;
 
     // 패치노트/정보창의 닫기 버튼(X)은 HTML onclick="showLobby()"로 처리됨.
+
+    // 모든 버튼 요소에 클릭음 추가
+    const allButtons = document.querySelectorAll('button, .lobby-img-btn, .close-btn');
+    allButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            if (window.SoundManager) window.SoundManager.playSFX('click');
+        });
+    });
 
     // 시작 시 로비 보여주기
     showLobby();
@@ -387,9 +403,11 @@ function checkAnswer(selectedIndex, btnElement) {
 
     if (selectedIndex === correctIndex) {
         // 정답
+        if (window.SoundManager) window.SoundManager.playSFX('correct');
         handleCorrectAnswer();
     } else {
         // 오답
+        if (window.SoundManager) window.SoundManager.playSFX('wrong');
         if (btnElement) btnElement.classList.add('shake');
         setTimeout(gameOver, 500); // 쉐이크 효과 후 종료
     }
@@ -419,6 +437,12 @@ function gameOver() {
     if (gameState.isGameOver) return;
     gameState.isGameOver = true;
     clearInterval(gameState.timerInterval);
+
+    if (window.SoundManager) {
+        window.SoundManager.playSFX('gameOver');
+        // 게임 오버 때는 BGM 끄기? 아니면 유지? 분위기 유지를 위해 유지하거나 별도 BGM으로 전환
+        // 여기서는 유지.
+    }
 
     // 통계 계산
     const totalPlayTime = Math.floor((Date.now() - gameState.startTime) / 1000);
