@@ -3,6 +3,10 @@
 // ----------------------------------------------------------------------
 const PATCH_NOTES = `
 ---------
+25년 12월 17일 오후 8시
+게임 최적화 작업을 진행했습니다.
+(불필요한 코드 및 라이브러리 제거)
+---------
 25년 12월 17일 오후 7시
 게임오버시 풀이보기 기능을 추가했습니다.
 효과음을 추가했습니다.
@@ -33,7 +37,6 @@ const ui = {
     app: document.getElementById('app'),
     lobbyScreen: document.getElementById('lobby-screen'),
     patchNotesScreen: document.getElementById('patch-notes-screen'),
-    gameInfoScreen: document.getElementById('game-info-screen'),
     gamePlayScreen: document.getElementById('game-play-screen'),
 
     // Buttons
@@ -139,7 +142,6 @@ function showGamePlay() {
 function hideAllScreens() {
     if (ui.lobbyScreen) ui.lobbyScreen.classList.add('hidden');
     if (ui.patchNotesScreen) ui.patchNotesScreen.classList.add('hidden');
-    if (ui.gameInfoScreen) ui.gameInfoScreen.classList.add('hidden');
     if (ui.gamePlayScreen) ui.gamePlayScreen.classList.add('hidden');
     if (ui.solutionScreen) ui.solutionScreen.classList.add('hidden');
 }
@@ -457,7 +459,7 @@ function gameOver() {
     if (ui.gameOverScreen) ui.gameOverScreen.classList.remove('hidden');
 }
 
-// 고급 화면 붕괴 효과 (Simulated Debris - No html2canvas)
+// 고급 화면 붕괴 효과 (Simulated Debris)
 function createScreenCrumbleEffect(callback) {
     // 1. 파티클 생성을 위한 타겟 요소 목록
     const targets = [];

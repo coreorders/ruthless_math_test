@@ -14,14 +14,9 @@ const SoundManager = {
         }
     },
 
-    // BGM 삭제 (빈 함수로 유지하여 호출 에러 방지)
-    playBGM: function () {
-        // No BGM requested
-    },
-
-    stopBGM: function () {
-        // No BGM requested
-    },
+    // BGM 기능 제거됨 (인터페이스 유지를 위해 빈 함수)
+    playBGM: function () { },
+    stopBGM: function () { },
 
     playSFX: function (type) {
         if (this.isMuted) return;
@@ -46,7 +41,6 @@ const SoundManager = {
                 osc.stop(now + 0.05);
                 break;
             case 'correct':
-                // 팡파레 느낌
                 osc.type = 'sawtooth';
                 osc.frequency.setValueAtTime(523.25, now); // C5
                 osc.frequency.setValueAtTime(659.25, now + 0.1); // E5

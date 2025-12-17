@@ -434,20 +434,3 @@ body {
     filter: drop-shadow(0 0 15px #ff0000) brightness(1.2);
     /* 붉은 광원 및 밝기 증가 */
 }
-
-/* Red Lobby Buttons (Text version - Legacy safe keep or remove if unused) */
-.lobby-btn-red {
-    color: #ff0000 !important;
-    text-shadow: 2px 2px 1px #000, 0 0 10px #550000;
-    font-size: 36px;
-    letter-spacing: 2px;
-    transition: all 0.2s ease;
-    opacity: 0.9;
-}
-
-.lobby-btn-red:hover {
-    color: #ffffff !important;
-    text-shadow: 0 0 20px #ff0000, 0 0 40px #ff0000;
-    transform: scale(1.1) rotate(2deg);
-    opacity: 1;
-}
