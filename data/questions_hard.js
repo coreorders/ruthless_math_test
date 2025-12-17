@@ -1,313 +1,352 @@
-/**
- * 어려운 난이도 문제 데이터 (총 50문제)
- *
- * 문제 추가 방법:
- * 아래 배열에 객체를 추가하세요.
- * id: 문제의 고유 번호
- * question: 문제 내용
- * choices: 보기 3개
- * answerIndex: 정답 인덱스 (0, 1, 2)
- */
-
 window.QUESTIONS_HARD = [
     {
         id: "h1",
         question: "이차방정식 2x^2 - 5x + 3 = 0 의 두 근의 합은?",
         choices: ["5/2", "3/2", "-5/2"],
-        answerIndex: 0
+        answerIndex: 0,
+        solution: `근과 계수의 관계에 따르면, 두 근의 합은 -b/a 입니다. -(-5)/2 이므로 5/2가 됩니다. (인수분해하면 (2x-3)(x-1)=0 이 되어 해는 3/2, 1 입니다.)`
     },
     {
         id: "h2",
         question: "반지름이 r인 구의 부피 공식은?",
         choices: ["4/3 πr^3", "4πr^2", "πr^2"],
-        answerIndex: 0
+        answerIndex: 0,
+        solution: `구의 부피는 '3분의 4 파이 알 세제곱'입니다. 4πr²은 구의 겉넓이 공식이니 헷갈리지 마세요!`
     },
     {
         id: "h3",
         question: "피타고라스의 수 (3, 4, x)일 때 x는? (빗변)",
         choices: ["5", "6", "7"],
-        answerIndex: 0
+        answerIndex: 0,
+        solution: `가장 유명한 피타고라스의 수입니다. 3² + 4² = x² 에서 9 + 16 = 25 이므로, 제곱해서 25가 되는 수는 5입니다.`
     },
     {
         id: "h4",
         question: "이차방정식 x^2 - 6x + k = 0 이 중근을 가질 때 k의 값은?",
         choices: ["6", "9", "36"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `중근을 가지려면 완전제곱식이 되어야 합니다. 상수항 k는 일차항 계수(-6)의 반의 제곱이어야 하므로, (-3)² = 9 입니다.`
     },
     {
         id: "h5",
         question: "sin^2 x + cos^2 x 의 값은? (항상)",
         choices: ["0", "1", "2"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `삼각비에서 가장 중요한 공식 중 하나입니다. 각도가 같다면 사인 제곱과 코사인 제곱의 합은 무조건 1입니다.`
     },
     {
         id: "h6",
         question: "두 점 A(1, 2), B(4, 6) 사이의 거리는?",
         choices: ["3", "4", "5"],
-        answerIndex: 2
+        answerIndex: 2,
+        solution: `x좌표 차이는 3, y좌표 차이는 4입니다. 피타고라스 정리를 쓰면 √(3² + 4²) = √25 = 5 입니다.`
     },
     {
         id: "h7",
         question: "이차함수 y = -2(x - 3)^2 + 5 의 최댓값은?",
         choices: ["3", "-2", "5"],
-        answerIndex: 2
+        answerIndex: 2,
+        solution: `이 함수는 위로 볼록한(∩) 모양이므로 꼭짓점에서 최댓값을 가집니다. 꼭짓점이 (3, 5)이므로 최댓값은 y좌표인 5입니다.`
     },
     {
         id: "h8",
         question: "다음 중 무리수가 아닌 것은?",
         choices: ["루트 2", "파이(π)", "루트 0.09"],
-        answerIndex: 2
+        answerIndex: 2,
+        solution: `루트 0.09는 0.3의 제곱이므로 0.3으로 밖으로 나올 수 있습니다. 0.3은 유리수입니다.`
     },
     {
         id: "h9",
         question: "tan 60도의 값은?",
         choices: ["1", "루트 3", "루트 3 / 3"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `tan 60도는 √3 입니다. (참고: tan 30도는 √3/3, tan 45도는 1)`
     },
     {
         id: "h10",
         question: "이차방정식의 근의 공식에서 루트 안에 들어가는 식(판별식)은?",
         choices: ["b^2 - 4ac", "b^2 + 4ac", "a^2 - b^2"],
-        answerIndex: 0
+        answerIndex: 0,
+        solution: `근의 공식에서 ±루트 안에 있는 'b² - 4ac'를 판별식(D)이라고 부릅니다. 이 값에 따라 근의 개수가 결정됩니다.`
     },
     {
         id: "h11",
         question: "루트 12 + 루트 27 을 간단히 하면?",
         choices: ["5루트 3", "루트 39", "7루트 3"],
-        answerIndex: 0
+        answerIndex: 0,
+        solution: `루트 12는 2√3, 루트 27은 3√3입니다. 둘을 더하면 5√3이 됩니다.`
     },
     {
         id: "h12",
         question: "반지름이 r인 구의 겉넓이 공식은?",
         choices: ["4πr^2", "4/3 πr^3", "2πr"],
-        answerIndex: 0
+        answerIndex: 0,
+        solution: `구의 겉넓이는 반지름이 같은 원 넓이의 4배인 4πr² 입니다.`
     },
     {
         id: "h13",
         question: "y = 2x^2 그래프를 y축 방향으로 -3만큼 평행이동한 식은?",
         choices: ["y = 2(x-3)^2", "y = 2x^2 - 3", "y = 2x^2 + 3"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `y축 방향(위아래)으로 이동할 때는 식 뒤에 숫자를 그대로 더하거나 빼주면 됩니다. -3만큼 이동했으므로 뒤에 -3을 붙입니다.`
     },
     {
         id: "h14",
         question: "어떤 자료의 분산이 9일 때, 표준편차는?",
         choices: ["3", "9", "81"],
-        answerIndex: 0
+        answerIndex: 0,
+        solution: `표준편차는 분산에 루트를 씌운 값입니다. √9 = 3 입니다.`
     },
     {
         id: "h15",
         question: "인수분해 공식: a^3 - b^3 = ?",
         choices: ["(a-b)(a^2+ab+b^2)", "(a-b)^3", "(a+b)(a^2-ab+b^2)"],
-        answerIndex: 0
+        answerIndex: 0,
+        solution: `3차식의 인수분해 공식입니다. 부호가 (마이너스) -> (플러스) 순서인 (a-b)(a²+ab+b²)가 정답입니다.`
     },
     {
         id: "h16",
         question: "직각삼각형에서 빗변이 13, 한 변이 12일 때 남은 변은?",
         choices: ["5", "6", "7"],
-        answerIndex: 0
+        answerIndex: 0,
+        solution: `피타고라스 정리에 의해 x² + 12² = 13² 입니다. x² + 144 = 169 이므로 x² = 25, 즉 남은 변은 5입니다.`
     },
     {
         id: "h17",
         question: "일차함수 y = 3x + 1 과 평행하고 (0, 2)를 지나는 직선은?",
         choices: ["y = 3x + 2", "y = -3x + 2", "y = x + 2"],
-        answerIndex: 0
+        answerIndex: 0,
+        solution: `평행하다는 것은 기울기가 같다는 뜻이므로 기울기는 3입니다. (0, 2)를 지나므로 y절편은 2입니다. 따라서 y = 3x + 2.`
     },
     {
         id: "h18",
         question: "x^2 + 5x + 6 = 0 의 두 해의 곱은?",
         choices: ["5", "6", "-6"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `근과 계수의 관계에서 두 해의 곱은 c/a 입니다. 여기서는 6/1 이므로 6입니다. (실제 해는 -2, -3이므로 곱하면 6이 맞습니다.)`
     },
     {
         id: "h19",
         question: "원주각의 크기는 중심각의 크기의 몇 배인가?",
         choices: ["2배", "1/2배", "똑같다"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `동일한 호에 대한 원주각은 중심각의 절반(1/2)입니다.`
     },
     {
         id: "h20",
         question: "루트 2 = 1.414 일 때, 루트 200 의 값은?",
         choices: ["14.14", "141.4", "2.828"],
-        answerIndex: 0
+        answerIndex: 0,
+        solution: `루트 200은 √(100×2) = 10√2 입니다. 1.414에 10을 곱하면 14.14가 됩니다.`
     },
     {
         id: "h21",
         question: "다음 중 y가 x의 이차함수인 것은?",
         choices: ["y = 2x + 1", "y = x(x+1)", "y = 1/x^2"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `y = x(x+1)을 전개하면 y = x² + x 가 되어 최고차항이 2차인 이차함수가 됩니다. 세 번째는 분모에 x가 있어 이차함수가 아닙니다.`
     },
     {
         id: "h22",
         question: "반지름 6, 중심각 60도인 부채꼴의 넓이는?",
         choices: ["6π", "12π", "36π"],
-        answerIndex: 0
+        answerIndex: 0,
+        solution: `원 넓이(36π) × (60/360) 입니다. 36π × 1/6 = 6π 입니다.`
     },
     {
         id: "h23",
         question: "서로 다른 주사위 2개를 던져 합이 10이 될 확률은?",
         choices: ["1/12", "1/9", "1/6"],
-        answerIndex: 0
+        answerIndex: 0,
+        solution: `합이 10인 경우는 (4,6), (5,5), (6,4) 총 3가지입니다. 전체 경우의 수는 36가지이므로 3/36 = 1/12 입니다.`
     },
     {
         id: "h24",
         question: "2의 -2제곱(2^-2)의 값은?",
         choices: ["-4", "1/4", "0.25"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `지수에 마이너스가 있으면 역수를 의미합니다. 2² 분의 1과 같으므로 1/4 입니다.`
     },
     {
         id: "h25",
         question: "분모를 유리화하면? 1 / 루트2",
         choices: ["루트2", "2분의 루트2", "1"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `분모와 분자에 똑같이 루트2를 곱해줍니다. 분모는 2가 되고 분자는 루트2가 되어 (루트2)/2 가 됩니다.`
     },
     {
         id: "h26",
         question: "이차함수 y = a(x-p)^2 + q 의 꼭짓점은?",
         choices: ["(p, q)", "(-p, q)", "(p, -q)"],
-        answerIndex: 0
+        answerIndex: 0,
+        solution: `완전제곱식 괄호 안을 0으로 만드는 x값 p와 뒤에 더해진 상수 q가 꼭짓점의 좌표 (p, q)입니다.`
     },
     {
         id: "h27",
         question: "한 변의 길이가 a인 정삼각형의 높이 공식은?",
         choices: ["(루트3 / 2) a", "(루트3 / 4) a", "루트3 a"],
-        answerIndex: 0
+        answerIndex: 0,
+        solution: `정삼각형 높이 공식은 '2분의 루트3 a'이고, 넓이 공식은 '4분의 루트3 a제곱'입니다.`
     },
     {
         id: "h28",
         question: "cos 0도의 값은?",
         choices: ["0", "1", "undefined"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `cos 0도는 1이고, sin 0도는 0입니다. 그래프를 떠올려보면 코사인은 1에서 시작해서 내려갑니다.`
     },
     {
         id: "h29",
         question: "다음 중 인수분해가 바르게 된 것은?",
         choices: ["x^2 - 4 = (x-2)^2", "x^2 - 4 = (x+2)(x-2)", "x^2 + 4 = (x+2)(x+2)"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `합차 공식 a² - b² = (a+b)(a-b)를 적용해야 합니다. x² - 2² 이므로 (x+2)(x-2)가 맞습니다.`
     },
     {
         id: "h30",
         question: "밑면 반지름 3, 높이 4인 원뿔의 부피는?",
         choices: ["12π", "36π", "16π"],
-        answerIndex: 0
+        answerIndex: 0,
+        solution: `뿔의 부피는 기둥 부피의 1/3입니다. 밑넓이(9π) × 높이(4) × 1/3 = 12π 입니다.`
     },
     {
         id: "h31",
         question: "연립부등식의 해가 없는 경우는?",
         choices: ["겹치는 부분이 없을 때", "겹치는 부분이 하나일 때", "모든 실수일 때"],
-        answerIndex: 0
+        answerIndex: 0,
+        solution: `연립부등식은 두 조건을 동시에 만족해야 하는데, 수직선에서 겹치는(공통) 부분이 하나도 없으면 해가 없습니다.`
     },
     {
         id: "h32",
         question: "y = -x^2 + 4x 의 그래프의 축의 방정식은?",
         choices: ["x = 1", "x = 2", "x = -2"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `축의 방정식 공식 x = -b/2a 에 대입하면 -4 / (2 × -1) = 2 가 됩니다.`
     },
     {
         id: "h33",
         question: "루트( (-5)^2 ) 의 값은?",
         choices: ["-5", "5", "±5"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `루트 안의 제곱은 계산하면 25가 되고, 루트 25는 양수 5입니다. 제곱근 기호(루트) 앞이 양수면 결과도 무조건 양수여야 합니다.`
     },
     {
         id: "h34",
         question: "원의 접선은 그 접점과 원의 중심을 잇는 반지름과 어떤 관계인가?",
         choices: ["평행하다", "수직이다", "일치한다"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `원의 접선은 접점에서 반지름과 항상 90도(수직)로 만납니다.`
     },
     {
         id: "h35",
         question: "이차방정식 판별식 D > 0 이면 근의 개수는?",
         choices: ["2개 (서로 다른)", "1개 (중근)", "0개"],
-        answerIndex: 0
+        answerIndex: 0,
+        solution: `판별식이 양수면 서로 다른 두 실근, 0이면 중근(1개), 음수면 해가 없습니다(0개).`
     },
     {
         id: "h36",
         question: "한 내각의 크기가 108도인 정다각형은?",
         choices: ["정오각형", "정육각형", "정팔각형"],
-        answerIndex: 0
+        answerIndex: 0,
+        solution: `정n각형의 한 내각 공식에 대입해도 되지만, 외각을 이용하면 쉽습니다. 내각이 108도면 외각은 72도입니다. 360/n = 72 이므로 n=5, 정오각형입니다.`
     },
     {
         id: "h37",
         question: "5명의 학생을 한 줄로 세우는 경우의 수는?",
         choices: ["20", "60", "120"],
-        answerIndex: 2
+        answerIndex: 2,
+        solution: `5명부터 1명까지 차례로 곱하면 됩니다(5 팩토리얼). 5 × 4 × 3 × 2 × 1 = 120가지입니다.`
     },
     {
         id: "h38",
         question: "직각삼각형에서 빗변의 중점은 무엇인가?",
         choices: ["내심", "외심", "무게중심"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `매우 중요한 성질입니다! 직각삼각형 빗변의 한가운데 점은 외접원의 중심(외심)이며, 세 꼭짓점까지의 거리가 같습니다.`
     },
     {
         id: "h39",
         question: "x^2 - 8x + 16 = 0 의 해는?",
         choices: ["x = 4 (중근)", "x = -4 (중근)", "x = 4, -4"],
-        answerIndex: 0
+        answerIndex: 0,
+        solution: `좌변을 인수분해하면 (x-4)² = 0 이 됩니다. 따라서 해는 4 하나뿐인 중근입니다.`
     },
     {
         id: "h40",
         question: "루트 2와 루트 3 사이에 있는 유리수는?",
         choices: ["1.4", "1.5", "1.8"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `루트2는 약 1.414, 루트3은 약 1.732입니다. 이 사이에 있는 수는 1.5입니다.`
     },
     {
         id: "h41",
         question: "다음 식을 계산하면? (루트2 + 1)(루트2 - 1)",
         choices: ["1", "2", "3"],
-        answerIndex: 0
+        answerIndex: 0,
+        solution: `합차 공식 (a+b)(a-b) = a² - b² 꼴입니다. (루트2)² - 1² = 2 - 1 = 1 입니다.`
     },
     {
         id: "h42",
         question: "이차함수 그래프의 폭이 가장 좁은 것은?",
         choices: ["y = x^2", "y = 2x^2", "y = 0.5x^2"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `x² 앞의 계수의 절댓값이 클수록 그래프의 폭이 좁고 홀쭉해집니다. 2가 가장 크므로 가장 좁습니다.`
     },
     {
         id: "h43",
         question: "대각선의 개수가 5개인 다각형은?",
         choices: ["오각형", "육각형", "사각형"],
-        answerIndex: 0
+        answerIndex: 0,
+        solution: `별 모양을 그릴 수 있는 오각형의 대각선 개수가 5개입니다. 공식 n(n-3)/2 에 5를 넣으면 5×2/2 = 5가 나옵니다.`
     },
     {
         id: "h44",
         question: "다음 중 확률이 될 수 없는 값은?",
         choices: ["0", "0.7", "1.2"],
-        answerIndex: 2
+        answerIndex: 2,
+        solution: `확률은 0(절대 안 일어남)부터 1(반드시 일어남) 사이의 값만 가질 수 있습니다. 1을 넘는 1.2는 확률이 될 수 없습니다.`
     },
     {
         id: "h45",
         question: "두 원의 위치 관계 중 '외접'할 때 중심 거리는?",
         choices: ["반지름의 합", "반지름의 차", "반지름의 곱"],
-        answerIndex: 0
+        answerIndex: 0,
+        solution: `두 원이 바깥에서 한 점으로 만날 때(외접), 중심 사이의 거리는 두 원의 반지름을 더한 값(r1 + r2)과 같습니다.`
     },
     {
         id: "h46",
         question: "y = ax^2 + bx + c 에서 c의 역할은?",
         choices: ["기울기", "y절편", "꼭짓점의 x좌표"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `x에 0을 대입하면 y = c 가 나옵니다. 즉 c는 그래프가 y축과 만나는 점인 'y절편'을 결정합니다.`
     },
     {
         id: "h47",
         question: "sin 45도 ÷ cos 45도의 값은?",
         choices: ["0", "1", "2"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `sin 45도와 cos 45도는 둘 다 (루트2)/2 로 값이 같습니다. 같은 수로 나누면 1이 됩니다. (참고: sin/cos = tan 이므로 tan 45도와 같습니다.)`
     },
     {
         id: "h48",
         question: "다음 중 무리수인 것의 개수는? (루트4, 루트3, 3.14, π)",
         choices: ["1개", "2개", "3개"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `루트3과 파이(π)는 순환하지 않는 무한소수(무리수)입니다. 루트4는 2(유리수), 3.14는 유한소수(유리수)입니다. 따라서 2개입니다.`
     },
     {
         id: "h49",
         question: "정육면체의 대각선 길이 공식 (한 변 a)",
         choices: ["루트2 a", "루트3 a", "3a"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `공간도형인 정육면체의 대각선(가장 먼 꼭짓점 연결) 길이는 √3 a 입니다. (평면인 정사각형의 대각선이 √2 a 입니다.)`
     },
     {
         id: "h50",
         question: "이차방정식 3x^2 - 12 = 0 의 해는?",
         choices: ["x = 2", "x = ±2", "x = 4"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `3x² = 12 양변을 3으로 나누면 x² = 4 입니다. 제곱해서 4가 되는 수는 +2와 -2 두 개(±2)입니다.`
     }
 ];

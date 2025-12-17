@@ -1,12 +1,6 @@
 /**
  * 중간 난이도 문제 데이터 (총 55문제)
- *
- * 문제 추가 방법:
- * 아래 배열에 객체를 추가하세요.
- * id: 문제의 고유 번호
- * question: 문제 내용
- * choices: 보기 3개
- * answerIndex: 정답 인덱스 (0, 1, 2)
+ * solution 필드 업데이트 완료
  */
 
 window.QUESTIONS_MEDIUM = [
@@ -14,330 +8,385 @@ window.QUESTIONS_MEDIUM = [
         id: "m1",
         question: "이차함수 y = (x-1)^2 + 2 의 꼭짓점 좌표는?",
         choices: ["(1, 2)", "(-1, 2)", "(1, -2)"],
-        answerIndex: 0
+        answerIndex: 0,
+        solution: `이차함수 y = a(x-p)² + q 의 꼴에서 꼭짓점은 (p, q)입니다. 괄호 안이 0이 되는 x값 1과, 뒤에 더해진 상수 2를 묶으면 (1, 2)가 됩니다.`
     },
     {
         id: "m2",
         question: "루트 16 + 루트 9 = ?",
         choices: ["5", "7", "25"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `루트 16은 제곱해서 16이 되는 수인 4, 루트 9는 3과 같습니다. 따라서 4 + 3 = 7 입니다.`
     },
     {
         id: "m3",
         question: "삼각형의 내각의 합은?",
         choices: ["180도", "360도", "90도"],
-        answerIndex: 0
+        answerIndex: 0,
+        solution: `어떤 모양의 삼각형이든 세 내각(안쪽 각)을 모두 합치면 항상 180도가 됩니다.`
     },
     {
         id: "m4",
         question: "x^2 - 4x + 4 = 0 의 해는?",
         choices: ["x = 2", "x = -2", "x = 4"],
-        answerIndex: 0
+        answerIndex: 0,
+        solution: `좌변을 인수분해하면 (x-2)² = 0 이 됩니다. 제곱해서 0이 되는 수는 0뿐이므로, x-2=0, 즉 x=2 입니다 (중근).`
     },
     {
         id: "m5",
         question: "확률: 주사위 한 개를 던져서 짝수가 나올 확률은?",
         choices: ["1/2", "1/3", "1/6"],
-        answerIndex: 0
+        answerIndex: 0,
+        solution: `주사위 눈 6개 중 짝수는 2, 4, 6 세 개입니다. 확률은 3/6 이므로 약분하면 1/2 입니다.`
     },
     {
         id: "m6",
         question: "연립방정식 x + y = 5, x - y = 1 의 해 (x, y)는?",
         choices: ["(2, 3)", "(3, 2)", "(4, 1)"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `두 식을 더하면 2x = 6 이 되어 x = 3 입니다. x에 3을 대입하면 3 + y = 5 이므로 y = 2 가 됩니다.`
     },
     {
         id: "m7",
         question: "일차부등식 2x > 6 의 해는?",
         choices: ["x > 3", "x < 3", "x > 2"],
-        answerIndex: 0
+        answerIndex: 0,
+        solution: `부등식의 양변을 양수 2로 나누어도 부등호 방향은 바뀌지 않습니다. 따라서 x > 3 입니다.`
     },
     {
         id: "m8",
         question: "다음 식을 인수분해하면? x^2 - 9",
         choices: ["(x+3)(x-3)", "(x-3)^2", "(x+9)(x-1)"],
-        answerIndex: 0
+        answerIndex: 0,
+        solution: `합차 공식 a² - b² = (a+b)(a-b)를 이용합니다. 9는 3의 제곱이므로 (x+3)(x-3)이 됩니다.`
     },
     {
         id: "m9",
         question: "직각삼각형에서 빗변의 길이가 5, 다른 한 변이 3일 때 남은 변의 길이는?",
         choices: ["3", "4", "2"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `피타고라스 정리에 의해 (남은 변)² + 3² = 5² 입니다. (남은 변)² = 25 - 9 = 16 이므로 길이는 4입니다.`
     },
     {
         id: "m10",
         question: "루트 2 곱하기 루트 8 의 값은?",
         choices: ["4", "8", "루트 10"],
-        answerIndex: 0
+        answerIndex: 0,
+        solution: `루트끼리의 곱셈은 안의 숫자끼리 곱하면 됩니다. √2 × √8 = √16 이고, 16은 4의 제곱이므로 4가 됩니다.`
     },
     {
         id: "m11",
         question: "y = -2x + 4 의 그래프의 기울기는?",
         choices: ["2", "-2", "4"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `일차함수 y = ax + b 꼴에서 x 앞의 계수 a가 '기울기'입니다. 여기서는 -2입니다.`
     },
     {
         id: "m12",
         question: "다음 중 순환소수인 것은?",
         choices: ["0.123", "0.333...", "3.141592...(파이)"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `'순환소수'는 소수점 아래 특정 숫자가 무한히 반복되는 소수입니다. 0.333...은 3이 반복되는 순환소수이고, 파이는 규칙 없이 나열되는 비순환 소수(무리수)입니다.`
     },
     {
         id: "m13",
         question: "다각형의 외각의 크기의 합은 항상 몇 도인가?",
         choices: ["180도", "360도", "540도"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `삼각형이든 십각형이든 상관없이 모든 다각형의 외각(바깥쪽 각)의 합은 항상 360도입니다.`
     },
     {
         id: "m14",
         question: "이차방정식 x(x-3) = 0 의 두 해는?",
         choices: ["0, 3", "1, 3", "0, -3"],
-        answerIndex: 0
+        answerIndex: 0,
+        solution: `두 식을 곱해서 0이 되려면 앞의 x가 0이거나, 뒤의 (x-3)이 0이어야 합니다. 따라서 해는 0 또는 3입니다.`
     },
     {
         id: "m15",
         question: "두 개의 동전을 동시에 던질 때, 모두 앞면이 나올 확률은?",
         choices: ["1/2", "1/3", "1/4"],
-        answerIndex: 2
+        answerIndex: 2,
+        solution: `전체 경우의 수는 4가지(앞앞, 앞뒤, 뒤앞, 뒤뒤)입니다. 이 중 '앞앞'은 1가지이므로 1/4입니다. (1/2 × 1/2 로도 계산 가능)`
     },
     {
         id: "m16",
         question: "다음 식을 전개하면? (a + b)^2",
         choices: ["a^2 + b^2", "a^2 + 2ab + b^2", "a^2 + ab + b^2"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `완전제곱식 공식입니다. (a+b)(a+b)를 분배하면 a² + ab + ba + b² 이 되고, ab가 2개이므로 a² + 2ab + b² 입니다.`
     },
     {
         id: "m17",
         question: "루트 3은 대략 얼마인가?",
         choices: ["1.414", "1.732", "2.236"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `루트 2는 약 1.414, 루트 3은 약 1.732, 루트 5는 약 2.236 정도입니다. 자주 쓰이는 값이라 외워두면 좋아요.`
     },
     {
         id: "m18",
         question: "y = 3x - 1 의 y절편은?",
         choices: ["3", "1", "-1"],
-        answerIndex: 2
+        answerIndex: 2,
+        solution: `'y절편'은 그래프가 y축과 만나는 점의 y좌표로, x에 0을 넣었을 때의 값입니다. 식 뒤에 붙은 상수항인 -1이 y절편입니다.`
     },
     {
         id: "m19",
         question: "닮음비가 1:2인 두 원의 넓이의 비는?",
         choices: ["1:2", "1:4", "1:8"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `닮음비가 m:n 이면 넓이의 비는 제곱인 m²:n² 이 됩니다. 1²:2² 이므로 1:4 입니다.`
     },
     {
         id: "m20",
         question: "다음 중 무리수인 것은?",
         choices: ["루트 4", "루트 9", "루트 5"],
-        answerIndex: 2
+        answerIndex: 2,
+        solution: `루트 4는 2, 루트 9는 3으로 유리수입니다. 루트 5는 순환하지 않는 무한소수이므로 무리수입니다.`
     },
     {
         id: "m21",
         question: "부채꼴의 호의 길이를 구하는 공식에 필요한 것은?",
         choices: ["중심각", "높이", "대각선"],
-        answerIndex: 0
+        answerIndex: 0,
+        solution: `부채꼴 호의 길이는 원의 둘레에 (중심각/360)을 곱해서 구합니다. 따라서 중심각의 크기가 꼭 필요합니다.`
     },
     {
         id: "m22",
         question: "1부터 10까지의 자연수 중 소수(Prime)의 개수는?",
         choices: ["3개 (2,3,5)", "4개 (2,3,5,7)", "5개 (1,2,3,5,7)"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `소수는 1과 자기 자신만을 약수로 가지는 수입니다. 1은 소수가 아니므로 2, 3, 5, 7 이렇게 4개입니다.`
     },
     {
         id: "m23",
         question: "점 (2, 3)을 x축에 대칭이동한 점의 좌표는?",
         choices: ["(-2, 3)", "(2, -3)", "(-2, -3)"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `x축을 기준으로 종이를 접었다고 상상해보세요. x좌표는 그대로이고 y좌표의 부호만 반대가 되어 (2, -3)이 됩니다.`
     },
     {
         id: "m24",
         question: "지수법칙: 2^3 × 2^2 의 값은?",
         choices: ["2^5 (32)", "2^6 (64)", "4^5 (1024)"],
-        answerIndex: 0
+        answerIndex: 0,
+        solution: `밑이 같은 수의 곱셈은 지수끼리 더합니다. 2^(3+2) = 2^5 이며, 값은 32입니다.`
     },
     {
         id: "m25",
         question: "직각삼각형의 합동 조건이 아닌 것은?",
         choices: ["RHA", "RHS", "AAA"],
-        answerIndex: 2
+        answerIndex: 2,
+        solution: `RHA와 RHS는 직각삼각형의 합동 조건입니다. 하지만 AAA(세 각이 같음)는 크기가 다를 수 있어 '닮음' 조건이지 합동 조건은 아닙니다.`
     },
     {
         id: "m26",
         question: "이차함수 y = x^2 의 그래프 모양은?",
         choices: ["아래로 볼록", "위로 볼록", "직선"],
-        answerIndex: 0
+        answerIndex: 0,
+        solution: `x²의 계수가 양수(1)이므로 아래로 볼록한(∪ 모양) 포물선이 됩니다. 음수라면 위로 볼록합니다.`
     },
     {
         id: "m27",
         question: "tan 45도의 값은?",
         choices: ["1/2", "1", "루트 3"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `직각이등변삼각형을 생각하면 밑변과 높이가 같으므로 tan 45도(밑변분의 높이)는 1입니다.`
     },
     {
         id: "m28",
         question: "다음 식을 간단히 하면? 3a(2a - 1)",
         choices: ["6a^2 - 1", "6a^2 - 3a", "5a^2 - 3a"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `분배법칙을 사용합니다. 3a와 2a를 곱하면 6a², 3a와 -1을 곱하면 -3a가 되어 6a² - 3a 입니다.`
     },
     {
         id: "m29",
         question: "다음 중 피타고라스의 수가 아닌 것은?",
         choices: ["3, 4, 5", "5, 12, 13", "1, 1, 2"],
-        answerIndex: 2
+        answerIndex: 2,
+        solution: `가장 긴 변의 제곱이 나머지 두 변의 제곱의 합과 같아야 합니다. 1² + 1² = 2 이지만 2²은 4이므로 성립하지 않습니다.`
     },
     {
         id: "m30",
         question: "원주율 파이(π)는 어떤 수인가?",
         choices: ["유리수", "무리수", "정수"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `파이(3.141592...)는 소수점 아래가 규칙 없이 끝없이 이어지는 무한소수이므로 분수로 나타낼 수 없는 '무리수'입니다.`
     },
     {
         id: "m31",
         question: "어떤 수 x의 2배에 5를 더하면 15다. 식은?",
         choices: ["2x + 5 = 15", "x + 10 = 15", "2(x+5) = 15"],
-        answerIndex: 0
+        answerIndex: 0,
+        solution: `x의 2배는 2x, 여기에 5를 더하면 +5, 그 결과가 15이므로 = 15 입니다. 따라서 2x + 5 = 15.`
     },
     {
         id: "m32",
         question: "A, B 두 사람이 가위바위보를 할 때 비길 확률은?",
         choices: ["1/2", "1/3", "1/9"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `전체 경우의 수는 3×3=9가지입니다. 비기는 경우는 (가위,가위), (바위,바위), (보,보) 3가지이므로 확률은 3/9 = 1/3 입니다.`
     },
     {
         id: "m33",
         question: "sin 30도의 값은?",
         choices: ["1/2", "루트2/2", "루트3/2"],
-        answerIndex: 0
+        answerIndex: 0,
+        solution: `삼각비 특수각 값으로 sin 30도는 1/2, sin 45도는 루트2/2, sin 60도는 루트3/2 입니다.`
     },
     {
         id: "m34",
         question: "다음 중 이차방정식이 아닌 것은?",
         choices: ["x^2 + 2x = 0", "x^2 - 5 = x^2 + x", "(x+1)^2 = 2"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `두 번째 식의 양변에 있는 x²을 지우면 일차방정식이 됩니다 (-5 = x). 차수가 2인 항이 살아있어야 이차방정식입니다.`
     },
     {
         id: "m35",
         question: "서로 다른 두 주사위를 던질 때 나오는 경우의 수는?",
         choices: ["12가지", "36가지", "6가지"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `첫 번째 주사위 6가지 × 두 번째 주사위 6가지 = 총 36가지의 경우가 나옵니다.`
     },
     {
         id: "m36",
         question: "식 4x^2 - y^2 을 인수분해하면?",
         choices: ["(2x+y)(2x-y)", "(4x+y)(x-y)", "(2x-y)^2"],
-        answerIndex: 0
+        answerIndex: 0,
+        solution: `4x²은 (2x)²과 같습니다. 따라서 합차 공식 a²-b²에 의해 (2x+y)(2x-y)가 됩니다.`
     },
     {
         id: "m37",
         question: "반지름이 10인 원의 둘레는?",
         choices: ["10π", "20π", "100π"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `원 둘레 공식은 2πr (지름 × 파이) 입니다. 반지름이 10이므로 지름은 20이고, 둘레는 20π가 됩니다.`
     },
     {
         id: "m38",
         question: "다음 중 함수 y=x^2 그래프 위에 있는 점은?",
         choices: ["(1, 2)", "(2, 4)", "(3, 6)"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `x좌표를 식에 대입했을 때 y좌표가 나오는지 확인합니다. x에 2를 넣으면 2²=4 이므로 (2, 4)가 그래프 위의 점입니다.`
     },
     {
         id: "m39",
         question: "루트 81 의 제곱근은?",
         choices: ["9", "3과 -3", "81"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `먼저 '루트 81'은 9와 같습니다. 즉, 문제는 '9의 제곱근'을 묻는 것입니다. 제곱해서 9가 되는 수는 3과 -3 두 개입니다.`
     },
     {
         id: "m40",
         question: "평행사변형의 넓이 구하는 공식은?",
         choices: ["밑변 × 높이", "밑변 × 높이 ÷ 2", "(윗변+아랫변)×높이÷2"],
-        answerIndex: 0
+        answerIndex: 0,
+        solution: `평행사변형은 직사각형과 같이 '밑변 × 높이'로 넓이를 구합니다. 나누기 2를 하는 것은 삼각형입니다.`
     },
     {
         id: "m41",
         question: "1차 함수 y = -x + 3 이 지나지 않는 사분면은?",
         choices: ["제1사분면", "제2사분면", "제3사분면"],
-        answerIndex: 2
+        answerIndex: 2,
+        solution: `y절편이 3(양수)이고 기울기가 -1(음수)이므로 오른쪽 아래로 내려가는 직선입니다. 1, 2, 4사분면을 지나고 제3사분면은 지나지 않습니다.`
     },
     {
         id: "m42",
         question: "두 점 (1,1)과 (4,5) 사이의 거리는?",
         choices: ["4", "5", "6"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `x 차이는 3, y 차이는 4입니다. 피타고라스 정리를 이용하면 √(3² + 4²) = √25 = 5 입니다.`
     },
     {
         id: "m43",
         question: "다음 중 중앙값(Median)은? (데이터: 1, 5, 2, 4, 3)",
         choices: ["2", "3", "4"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `데이터를 크기 순서대로 정렬하면 [1, 2, 3, 4, 5]가 됩니다. 이 중 정중앙에 위치한 값은 3입니다.`
     },
     {
         id: "m44",
         question: "직육면체의 대각선 길이를 구하는 식은? (가로a, 세로b, 높이c)",
         choices: ["a+b+c", "루트(a^2+b^2+c^2)", "abc"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `공간에서의 피타고라스 정리 확장입니다. 가로, 세로, 높이를 각각 제곱해서 더한 뒤 루트를 씌우면 대각선 길이가 됩니다.`
     },
     {
         id: "m45",
         question: "2x + y = 7 의 자연수 해의 개수는?",
         choices: ["2개", "3개", "무수히 많다"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `x가 1이면 y=5, x가 2이면 y=3, x가 3이면 y=1 입니다. x가 4 이상이면 y가 음수가 되므로 자연수 해는 (1,5), (2,3), (3,1) 총 3개입니다.`
     },
     {
         id: "m46",
         question: "정비례 관계 y = ax 그래프는 항상 어디를 지나는가?",
         choices: ["(0, 1)", "(1, 1)", "(0, 0) 원점"],
-        answerIndex: 2
+        answerIndex: 2,
+        solution: `x에 0을 대입하면 a값에 상관없이 항상 y도 0이 됩니다. 즉, 원점 (0, 0)을 항상 지납니다.`
     },
     {
         id: "m47",
         question: "다음 식을 전개하면? (x - 5)(x + 2)",
         choices: ["x^2 - 3x - 10", "x^2 + 3x - 10", "x^2 - 7x - 10"],
-        answerIndex: 0
+        answerIndex: 0,
+        solution: `x² + (2-5)x + (-5×2) 공식에 대입하면, 합은 -3, 곱은 -10이므로 x² - 3x - 10 입니다.`
     },
     {
         id: "m48",
         question: "어떤 수의 제곱이 25라면 그 수는?",
         choices: ["5", "-5", "플러스 마이너스 5"],
-        answerIndex: 2
+        answerIndex: 2,
+        solution: `5도 제곱하면 25, -5도 제곱하면 25가 됩니다. 제곱근을 구할 때는 양수와 음수 두 개를 모두 생각해야 합니다.`
     },
     {
         id: "m49",
         question: "삼각비에서 cos 60도의 값은?",
         choices: ["1/2", "루트3/2", "1"],
-        answerIndex: 0
+        answerIndex: 0,
+        solution: `cos 60도는 sin 30도와 값이 같습니다. 정답은 1/2 입니다.`
     },
     {
         id: "m50",
         question: "다음 중 항등식인 것은?",
         choices: ["2x = 4", "3x + 2 = 3x + 2", "x + 1 = 3"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `'항등식'은 x에 어떤 값을 넣어도 항상 참이 되는 식입니다. 좌변과 우변이 똑같이 생긴 식을 찾으면 됩니다.`
     },
     {
         id: "m51",
         question: "제곱근 3 + 제곱근 12 를 간단히 하면?",
         choices: ["루트 15", "3루트 3", "2루트 3"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `루트 12는 2루트 3 (√4×3)으로 바꿀 수 있습니다. 따라서 √3 + 2√3 = 3√3 이 됩니다.`
     },
     {
         id: "m52",
         question: "마름모의 넓이 구하는 공식은?",
         choices: ["한 대각선 × 다른 대각선", "한 대각선 × 다른 대각선 ÷ 2", "밑변 × 높이"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `마름모는 두 대각선을 곱한 뒤 반드시 2로 나누어 주어야 합니다.`
     },
     {
         id: "m53",
         question: "y가 x에 반비례하는 식은?",
         choices: ["y = 2x", "y = 2/x", "y = x + 2"],
-        answerIndex: 1
+        answerIndex: 1,
+        solution: `'반비례'는 x가 커질수록 y가 작아지는 관계(곱이 일정한 관계)입니다. x가 분모에 있는 y = a/x 꼴이 반비례 식입니다.`
     },
     {
         id: "m54",
         question: "연속하는 세 자연수의 합이 12일 때 가장 큰 수는?",
         choices: ["3", "4", "5"],
-        answerIndex: 2
+        answerIndex: 2,
+        solution: `가운데 수를 x라 하면 (x-1) + x + (x+1) = 3x = 12 입니다. x=4 이므로 세 수는 3, 4, 5이고 가장 큰 수는 5입니다.`
     },
     {
         id: "m55",
         question: "다음 중 확률이 0인 사건은?",
         choices: ["주사위를 던져 7이 나올 확률", "동전을 던져 앞면이 나올 확률", "해가 동쪽에서 뜰 확률"],
-        answerIndex: 0
+        answerIndex: 0,
+        solution: `일반적인 주사위 눈은 1~6까지이므로 7은 절대 나올 수 없습니다. 절대 일어날 수 없는 사건의 확률은 0입니다.`
     }
 ];

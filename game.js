@@ -3,6 +3,9 @@
 // ----------------------------------------------------------------------
 const PATCH_NOTES = `
 ---------
+25년 12월 17일 오후 7시
+게임오버시 풀이보기 기능을 추가했습니다.
+---------
 25년 12월 17일
 게임제작
 ---------
@@ -37,6 +40,8 @@ const ui = {
     patchNoteBtn: document.getElementById('patch-note-btn'),
     bugReportBtn: document.getElementById('bug-report-btn'),
     patchNotesContent: document.getElementById('patch-notes-content'),
+    solutionBtn: document.getElementById('solution-btn'),
+    closeSolutionBtn: document.getElementById('close-solution-btn'),
 
     // Game Elements
     timer: document.getElementById('timer'),
@@ -45,6 +50,9 @@ const ui = {
     imageContainer: document.getElementById('question-image-container'),
     choicesContainer: document.getElementById('choices-container'),
     gameOverScreen: document.getElementById('game-over-screen'),
+    solutionScreen: document.getElementById('solution-screen'),
+    solutionQuestionText: document.getElementById('solution-question-text'),
+    solutionContent: document.getElementById('solution-content'),
     finalScore: document.getElementById('final-score'),
     avgTime: document.getElementById('avg-time'),
     totalTime: document.getElementById('total-time'),
@@ -91,6 +99,29 @@ function openBugReport() {
     window.open('https://open.kakao.com/o/gidISY6h', '_blank');
 }
 
+function showSolution() {
+    if (ui.solutionScreen) {
+        ui.solutionScreen.classList.remove('hidden');
+
+        const q = gameState.currentQuestion;
+        if (q) {
+            if (ui.solutionQuestionText) ui.solutionQuestionText.innerHTML = formatMathToLatex(q.question);
+            if (ui.solutionContent) ui.solutionContent.innerHTML = formatMathToLatex(q.solution || "풀이가 없습니다.");
+
+            // MathJax 렌더링
+            if (window.MathJax && ui.solutionScreen) {
+                window.MathJax.typesetPromise && window.MathJax.typesetPromise([ui.solutionScreen])
+                    .catch((err) => console.log('MathJax error:', err));
+            }
+        }
+    }
+}
+
+function closeSolution() {
+    if (ui.solutionScreen) ui.solutionScreen.classList.add('hidden');
+    // 게임 오버 화면은 그대로 유지됨 (overlay 밑에 있으므로)
+}
+
 function showGamePlay() {
     hideAllScreens();
     if (ui.gamePlayScreen) ui.gamePlayScreen.classList.remove('hidden');
@@ -102,6 +133,7 @@ function hideAllScreens() {
     if (ui.patchNotesScreen) ui.patchNotesScreen.classList.add('hidden');
     if (ui.gameInfoScreen) ui.gameInfoScreen.classList.add('hidden');
     if (ui.gamePlayScreen) ui.gamePlayScreen.classList.add('hidden');
+    if (ui.solutionScreen) ui.solutionScreen.classList.add('hidden');
 }
 
 // Global scope for HTML onclick access
@@ -121,6 +153,10 @@ window.onload = function () {
     if (ui.toLobbyBtn) ui.toLobbyBtn.onclick = showLobby;
 
     if (ui.retryBtn) ui.retryBtn.onclick = initGame; // 다시하기는 게임 바로 재시작
+
+    // 풀이 보기 관련
+    if (ui.solutionBtn) ui.solutionBtn.onclick = showSolution;
+    if (ui.closeSolutionBtn) ui.closeSolutionBtn.onclick = closeSolution;
 
     // 패치노트/정보창의 닫기 버튼(X)은 HTML onclick="showLobby()"로 처리됨.
 

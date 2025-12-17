@@ -258,6 +258,7 @@ body {
     background-color: #cc0000;
 }
 
+#solution-btn,
 #to-lobby-btn {
     margin-top: 15px;
     padding: 10px 30px;
@@ -272,10 +273,45 @@ body {
     transition: all 0.2s;
 }
 
+#solution-btn:hover,
 #to-lobby-btn:hover {
     background-color: #220000;
     box-shadow: 0 0 15px #ff0000;
     transform: scale(1.05);
+}
+
+/* Solution Screen specific */
+#solution-screen {
+    z-index: 300;
+    /* 게임오버 화면보다 위에 */
+}
+
+#solution-question-text {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #ff0000;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+#solution-content {
+    width: 100%;
+    flex: 1;
+    /* 남은 공간 채우기 */
+    overflow-y: auto;
+    /* 세로 스크롤 허용 */
+    -webkit-overflow-scrolling: touch;
+    /* 부드러운 스크롤 */
+    color: #ffcccc;
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: left;
+    padding: 10px;
+    border: 1px solid #550000;
+    background-color: rgba(0, 0, 0, 0.5);
+    white-space: pre-wrap;
+    /* 줄바꿈 유지 */
 }
 
 /* Animations */

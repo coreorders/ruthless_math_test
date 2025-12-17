@@ -90,8 +90,18 @@
                 <div class="stat-row">도달한 문제: <span id="final-score">0</span>번</div>
                 <div class="stat-row">평균 소요 시간: <span id="avg-time">0.0</span>초</div>
                 <div class="stat-row">총 플레이 시간: <span id="total-time">0</span>초</div>
+                <button id="solution-btn">풀이 보기</button>
                 <button id="retry-btn">다시하기</button>
                 <button id="to-lobby-btn">로비로 가기</button>
+            </div>
+
+            <!-- 풀이 보기 화면 (팝업) -->
+            <div id="solution-screen" class="hidden overlay-screen">
+                <button class="close-btn" id="close-solution-btn">X</button>
+                <div id="solution-question-text">문제 내용</div>
+                <div id="solution-content">
+                    <!-- 풀이 내용 -->
+                </div>
             </div>
 
             <!-- 효과용 캔버스 -->
