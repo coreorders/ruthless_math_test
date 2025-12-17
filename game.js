@@ -103,7 +103,8 @@ function showPatchNotes() {
 
 function openBugReport() {
     // 사용자 요청 링크: https://open.kakao.com/o/gidISY6h
-    window.open('https://open.kakao.com/o/gidISY6h', '_blank');
+    // 텔레그램 인앱 브라우저 호환성을 위해 location.href 사용
+    window.location.href = 'https://open.kakao.com/o/gidISY6h';
 }
 
 function showSolution() {
