@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>무자비 수학 능력 평가 시험</title>
+    <link rel="stylesheet" href="style.css?v=29">
+    <!-- MathJax 설정 및 로드 -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+        </script>
+    <!-- 디버깅용 에러 핸들러 -->
+    <script>
+        window.onerror = function (msg, url, line, col, error) {
+            alert("자바스크립트 에러 발생!\n메시지: " + msg + "\n줄: " + line + "\n파일: " + url);
+            return false;
+        };
+    </script>
+    <!-- 화면 캡처용 html2canvas -->
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 1. 로비 화면 -->
+        <div id="lobby-screen">
+            <img src="assets/mainlogo.png" alt="무자비 수학 능력 평가" class="main-logo">
+
+            <div class="lobby-menu">
+                <button id="start-btn" class="lobby-img-btn">
+                    <img src="assets/gamestart.png" alt="게임 시작">
+                </button>
+                <button id="patch-note-btn" class="lobby-img-btn">
+                    <img src="assets/patchnote.png" alt="패치 노트">
+                </button>
+                <button id="bug-report-btn" class="lobby-img-btn">
+                    <img src="assets/bug.png" alt="버그 및 제보">
+                </button>
+            </div>
+
+            <div id="lobby-footer">제작자 : 민대식</div>
+        </div>
+
+        <!-- 2. 패치 노트 화면 -->
+        <div id="patch-notes-screen" class="hidden overlay-screen">
+            <button class="close-btn" onclick="showLobby()">X</button>
+            <img src="assets/patchnote.png" alt="패치 노트" class="patch-title-img">
+            <div id="patch-notes-content">
+                <!-- game.js에서 내용 로드 -->
+            </div>
+        </div>
+
+        <!-- 3. 게임 정보 화면 (삭제됨 - 버그 제보 링크로 대체) -->
+        <!-- <div id="game-info-screen" class="hidden overlay-screen"> ... </div> -->
+
+        <!-- 4. 인게임 화면 (기존 내용) -->
+        <div id="game-play-screen" class="hidden">
+            <!-- 타이머 영역 -->
+            <div id="timer-container">
+                <div id="question-counter">Q. 1</div>
+                <div id="timer">60</div>
+            </div>
+
+            <!-- 게임 영역 -->
+            <div id="game-area">
+                <div id="question-text">문제 로딩 중...</div>
+                <div id="question-image-container" class="hidden"></div>
+
+                <div id="choices-container">
+                    <button class="choice-btn" data-index="0">1번 선택지</button>
+                    <button class="choice-btn" data-index="1">2번 선택지</button>
+                    <button class="choice-btn" data-index="2">3번 선택지</button>
+                </div>
+            </div>
+
+            <!-- 게임 오버 화면 -->
+            <div id="game-over-screen" class="hidden">
+                <div id="game-over-title">GAME OVER</div>
+                <div class="stat-row">도달한 문제: <span id="final-score">0</span>번</div>
+                <div class="stat-row">평균 소요 시간: <span id="avg-time">0.0</span>초</div>
+                <div class="stat-row">총 플레이 시간: <span id="total-time">0</span>초</div>
+                <button id="retry-btn">다시하기</button>
+                <button id="to-lobby-btn">로비로 가기</button>
+            </div>
+
+            <!-- 효과용 캔버스 -->
+            <canvas id="sand-canvas"></canvas>
+        </div>
+    </div>
+
+    <!-- 데이터 로드 -->
+    <script src="data/questions_easy.js?v=29"></script>
+    <script src="data/questions_medium.js?v=29"></script>
+    <script src="data/questions_hard.js?v=29"></script>
+
+    <!-- 게임 로직 -->
+    <script src="game.js?v=29"></script>
+</body>
+
+</html>
